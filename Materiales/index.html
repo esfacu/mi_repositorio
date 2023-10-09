@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opciones</title>
+</head>
+<body>
+    <h1>Elige 2 opciones:</h1>
+    <form id="optionsForm">
+        <input type="checkbox" name="option" value="bendecida">Bendecida<br>
+        <input type="checkbox" name="option" value="gorda"> Gorda<br>
+        <input type="checkbox" name="option" value="vieja"> Vieja<br>
+    </form>
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (document.querySelectorAll('input[type="checkbox"]:checked').length > 2) {
+                    this.checked = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
